@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Characters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-indigo-600 p-4 text-white text-center">
+        <h1 class="text-3xl font-bold">Rick and Morty Characters</h1>
+    </header>
+
+    <!-- Character Grid -->
+    <div class="max-w-7xl mx-auto py-8 px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {% for character in characters %}
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+                <img src="{{ character['image'] }}" alt="{{ character['name'] }}" class="w-full h-64 object-cover rounded-lg mb-4">
+                <h2 class="text-xl font-semibold">{{ character['name'] }}</h2>
+                <p class="text-gray-600">{{ character['species'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
